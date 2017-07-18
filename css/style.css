@@ -787,8 +787,7 @@ form label {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
-  position: relative;
-  animation: pulse 1s ease infinite; }
+  position: relative; }
 
 @keyframes pulse {
   0% {
