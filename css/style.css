@@ -827,8 +827,12 @@ form label {
 #fh5co-couple-story,
 #fh5co-couple,
 #fh5co-gallery,
+#gifts,
+#hotels,
+#taxis,
+#rsvp,
 .fh5co-section {
-  padding: 7em 0;
+  padding: 5em 0;
   clear: both; }
   @media screen and (max-width: 768px) {
     #fh5co-testimonial,
@@ -839,6 +843,10 @@ form label {
     #fh5co-couple-story,
     #fh5co-couple,
     #fh5co-gallery,
+    #gifts,
+    #hotels,
+    #taxis,
+    #rsvp,
     .fh5co-section {
       padding: 3em 0; } }
 
@@ -882,7 +890,7 @@ form label {
   .couple-half h3 {
     font-family: "Sacramento", Arial, serif;
     color: #fac9c4;
-    font-size: 30px; }
+    font-size: 45px; }
   .couple-half .groom, .couple-half .bride {
     float: left;
     -webkit-border-radius: 50%;
@@ -1140,7 +1148,7 @@ form label {
     #fh5co-started .form-inline .form-group .form-control {
       width: 100%; }
   #fh5co-started .fh5co-heading {
-    margin-bottom: 20px; }
+    margin-bottom: 30px; }
     #fh5co-started .fh5co-heading h2 {
       margin-bottom: 0; }
 

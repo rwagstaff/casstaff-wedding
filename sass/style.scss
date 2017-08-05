@@ -1007,8 +1007,12 @@ form {
 #fh5co-couple-story,
 #fh5co-couple,
 #fh5co-gallery,
+#gifts,
+#hotels,
+#taxis,
+#rsvp,
 .fh5co-section {
-	padding: 7em 0;
+	padding: 5em 0;
 	clear: both;
 	@media screen and (max-width: $screen-sm) {
 		padding: 3em 0;
@@ -1056,7 +1060,7 @@ form {
 	h3{
 		font-family: $font-secondary;
 		color: $brand-primary;
-		font-size: 30px;
+		font-size: 45px;
 	}
 	.groom,.bride{
 		float: left;
