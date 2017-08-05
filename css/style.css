@@ -370,8 +370,7 @@ h1, h2, h3, h4, h5, h6, figure {
       font-size: 20px; }
     #fh5co-counter .event-wrap .event-col,
     #fh5co-event .event-wrap .event-col {
-      width: 50%;
-      float: left;
+      width: 100%;
       margin-bottom: 30px; }
 
 #fh5co-counter {
