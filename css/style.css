@@ -1519,4 +1519,8 @@ form label {
 .js .animate-box {
   opacity: 0; }
 
+#map {
+  height: 500px;
+  width: 70%; }
+
 /*# sourceMappingURL=style.css.map */

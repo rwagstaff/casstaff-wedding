@@ -120,31 +120,34 @@
     <div id="fh5co-couple">
         <div class="container">
             <div class="row">
+                <div class="couple-wrap">
+                    <div class="couple-half">
+                        <div class="groom">
+                            <img src="images/rich2.jpg" alt="groom" class="img-responsive">
+                        </div>
+                        <div class="desc-groom">
+                            <h3>Richard Wagstaff</h3>
+                        </div>
+                    </div>
+                    <p class="heart text-center"><i class="icon-heart2"></i></p>
+                    <div class="couple-half">
+                        <div class="bride">
+                            <img src="images/cass.jpg" alt="groom" class="img-responsive">
+                        </div>
+                        <div class="desc-bride">
+                            <h3>Cassie Holmes</h3>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                    <h2>Welcome</h2>
+
                     <h4>We invite you to celebrate our wedding on</h4>
                     <p>Saturday, July 14th, 2018 <br>Pentney Abbey, Abbey Road, Pentney, Norfolk, PE32 1JT</p>
-                </div>
-            </div>
-            <div class="couple-wrap animate-box">
-                <div class="couple-half">
-                    <div class="groom">
-                        <img src="images/rich2.jpg" alt="groom" class="img-responsive">
-                    </div>
-                    <div class="desc-groom">
-                        <h3>Richard Wagstaff</h3>
-                    </div>
-                </div>
-                <p class="heart text-center"><i class="icon-heart2"></i></p>
-                <div class="couple-half">
-                    <div class="bride">
-                        <img src="images/cass.jpg" alt="groom" class="img-responsive">
-                    </div>
-                    <div class="desc-bride">
-                        <h3>Cassie Holmes</h3>
+                    <div id="map" style="margin-left:15%">
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -161,7 +164,7 @@
                 <div class="display-t">
                     <div class="display-tc">
                         <div class="col-md-10 col-md-offset-1">
-                            <div class="col-md-6 col-sm-6 text-center" >
+                            <div class="col-md-6 col-sm-6 text-center">
                                 <div class="event-wrap animate-box" style="min-height: 406px">
                                     <h3>Ceremony</h3>
                                     <div class="event-col">
@@ -174,7 +177,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6 text-center" >
+                            <div class="col-md-6 col-sm-6 text-center">
                                 <div class="event-wrap animate-box" style="min-height: 406px">
                                     <h3>Reception</h3>
                                     <div class="event-col">
@@ -325,7 +328,9 @@
                             <address>King’s Lynn PE30 1RD, 01553 660492; Rooms – 11 stunning rooms, En-suite</address>
                         </div>
                         <div class="feature-copy">
-                            <h3><a href="https://www.sykescottages.co.uk/cottage/Norfolk-Pentney/Tamaura-Lodge-916390.html#duration=2&start=2018-07-14&calendar=2018-07&changeover=6">Tamaura Lodge</a></h3>
+                            <h3>
+                                <a href="https://www.sykescottages.co.uk/cottage/Norfolk-Pentney/Tamaura-Lodge-916390.html#duration=2&start=2018-07-14&calendar=2018-07&changeover=6">Tamaura
+                                    Lodge</a></h3>
                             <address>Common Rd, West Bilney, King's Lynn PE32 1JX; 3 bedroom lodge by the lake</address>
                         </div>
                     </div>
@@ -440,7 +445,8 @@
 									<i class="icon-heart"></i>
 								</span>
                         </div>
-                        <p>Your presence is present enough. However, if you would like to give us a wedding gift, any contributions towards our honeymoon would be hugely appreciated!</p>
+                        <p>Your presence is present enough. However, if you would like to give us a wedding gift, any
+                            contributions towards our honeymoon would be hugely appreciated!</p>
                     </div>
                 </div>
 
@@ -460,7 +466,9 @@
                             be an adult-only occasion. We hope this advance notice means you are still able to share our
                             big day and will enjoy having the evening off!
                             <br><br>Let us know if you can make it by clicking the button below.</p>
-                        <p><small style="color: white">Please let us know of any dietary requirements you have</small></p>
+                        <p>
+                            <small style="color: white">Please let us know of any dietary requirements you have</small>
+                        </p>
 
                     </div>
                 </div>
@@ -530,7 +538,51 @@
         enableUtc: false
     });
 
+function initMap() {
+        var uluru = {lat: 52.6851605, lng: 0.5125443};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: uluru
+        });
+        /** var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        }); */
 
+    var geocoder = new google.maps.Geocoder;
+    var infowindow = new google.maps.InfoWindow;
+
+    geocodePlaceId(geocoder, map, infowindow);
+
+
+
+      }
+
+ function geocodePlaceId(geocoder, map, infowindow) {
+  var placeId = 'ChIJzVlP82kn2EcRW1a2gCZhYYM';
+  geocoder.geocode({'placeId': placeId}, function(results, status) {
+    if (status === 'OK') {
+      if (results[0]) {
+        map.setZoom(11);
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+        });
+        infowindow.setContent(results[0].formatted_address);
+        infowindow.open(map, marker);
+      } else {
+        window.alert('No results found');
+      }
+    } else {
+      window.alert('Geocoder failed due to: ' + status);
+    }
+  });
+}
+
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn9_LVHbz213E0UYrMBjleQtbFG8ciSz8&callback=initMap">
 </script>
 
 </body>
